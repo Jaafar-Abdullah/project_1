@@ -1,0 +1,8 @@
+<h2>Private Messages</h2>
+<% if user_signed_in? %>
+<% @users.each do |user| %> 
+<div>
+  <%= link_to user.email, user_path(user) %> 
+</div>
+<% end %> 
+<% end %> 

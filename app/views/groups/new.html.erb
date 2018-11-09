@@ -1,0 +1,12 @@
+<h1>Groups#new</h1>
+<% @messages.each do |message| %>
+<%# <% if message.user.user_name == ""%> 
+<%# <%= message.user_user %>
+<%# <%else %>
+<%= message.user.user_name %>:
+<%# <%end %>
+  <%= message.body %>
+  <br>
+<% end %>
+
+<%= render partial: 'form' %>
