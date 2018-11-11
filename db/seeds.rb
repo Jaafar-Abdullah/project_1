@@ -23,7 +23,6 @@ group1 = Group.create(group_name: "jj")
 
 
 user1.groups << Group.find_by(group_name: "jj")
-user2.groups << Group.find_by(group_name: "jj")
 
 
 

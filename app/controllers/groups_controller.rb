@@ -1,22 +1,24 @@
 class GroupsController < ApplicationController
   def show
     @group = Group.find_by(id: params[:id])
+    # @messages = Message.where(group_id: params[:id]).and(Group.find_by(id: params[:id]))
+    @new_message = Message.new 
+
+    @group_messages = @group.messages.where.not(group_id: 0)
 
   end
-
+  
   def index
     # @messages = Message.all
-   u1 = user.find_by(id: current_user.id)
+    u1 = User.find_by(id: current_user.id)
     @groups = u1.groups
-
+    
   end
-
+  
   def edit
   end
-
+  
   def new
-    @messages = Message.all
-    @message = Message.new 
   end
 
   def create 
@@ -29,6 +31,6 @@ class GroupsController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:user_id,:body)
+    params.require(:message).permit(:user_id,:group_id,:body)
   end 
 end
