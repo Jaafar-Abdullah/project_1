@@ -9,5 +9,5 @@ module ApplicationCable
 
   # class AppearanceChannel < ApplicationCable::Channel
   # end
-  # end
+  end
 end
