@@ -1,6 +1,14 @@
 <%= form_for @message do |f| %>
-<%= f.text_area :body %>
+<div class="row">
+<div class="col s10">
+<%= f.text_area :body ,class:"col 10s" %>
+</div>
 <%= hidden_field_tag "message[receiver_id]", params[:id] %>
 <%= hidden_field_tag "message[user_id]", current_user.id %>
-<%= f.submit %>
+
+<div class="col s2">
+<%= f.submit class:"col 2s" %>
+</div>
 <% end %>
+
+</div>

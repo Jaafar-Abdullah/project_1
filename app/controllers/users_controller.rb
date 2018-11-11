@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def group_message
-    # @groups = Group.all 
+    @user = User.find_by(id: current_user.id)
+    # @messages = Message. 
+
   end
 
   

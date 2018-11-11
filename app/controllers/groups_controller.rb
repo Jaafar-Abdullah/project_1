@@ -1,10 +1,13 @@
 class GroupsController < ApplicationController
   def show
+    @group = Group.find_by(id: params[:id])
+
   end
 
   def index
     # @messages = Message.all
-    @groups = Group.all
+   u1 = user.find_by(id: current_user.id)
+    @groups = u1.groups
 
   end
 

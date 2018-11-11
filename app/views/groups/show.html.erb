@@ -1,2 +1,4 @@
 <h1>Groups#show</h1>
-
+<% @group.messages.each do |messege| %>
+  <%=  messege.body %>
+<% end %>

@@ -1,7 +1,7 @@
 <h1>Groups#index</h1>
 
 <% @groups.each do |group| %>
-  <%= link_to group.group_name, user_group_message_path(group) %>
-  <%= group.users.to_json %>
+  <%= link_to group.group_name, group_path(group) %>
+  <%# <%= group.users.to_json %>
 <% end %>
 

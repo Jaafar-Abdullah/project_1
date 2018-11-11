@@ -13,13 +13,18 @@ user1= User.create(user_name: "Jafar",user_image: "", email: "jafar@gmail.com", 
 user2= User.create(user_name: "Ali",user_image: "", email: "ali@gmail.com", password: "chicken", password_confirmation: "chicken")
 
 Message.destroy_all
-message1 = Message.create(body: "Hi",user_id:user1.id )
+message1 = Message.create(body: "Hi",user_id:user1.id)
 message2 = Message.create( body: "Hi:::::",user_id: user2.id)
 
 
 Group.destroy_all
 
 group1 = Group.create(group_name: "jj")
+
+
+user1.groups << Group.find_by(group_name: "jj")
+user2.groups << Group.find_by(group_name: "jj")
+
 
 
 

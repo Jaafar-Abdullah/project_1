@@ -4,15 +4,15 @@
 <p><%= @user.to_json %></p>
 <p><%= current_user.to_json %></p>
 
-<p><%= @messages.to_json %></p>
+<%# <p><%= @messages.to_json</p> %>
 
 <% @messages.each do |message| %>
-<%# <% if message.user.user_name == ""%> 
-<%# <%else %>
-<%= message.user.user_name %>:
-<%# <%end %>
-  <%= message.body %>
-  <br>
-<% end %>
 
+<div class="mess">
+  <img src="http://photo.elcinema.com.s3.amazonaws.com/uploads/_315x420_e200a9776586333a819828a946560cb18490e2ae6b3cf22ddeb1771f175a83c2.jpg" alt="">
+  <p class="name-left"><%= message.user.user_name %>:</p>
+  <p><%= message.body %></p>
+</div>
+
+<% end %>
 <%= render partial: 'messages/form' %>
