@@ -16,8 +16,13 @@
 //= require jquery
 //= require_tree .
 
-// $(document).on("turbolinks:load", function() {
+// $(document).ready(function() {});
 //   console.log("jquery connected!");
 //   //   $(".dropdown-trigger").dropdown();
 // });
 // // $(document).ready(function() {});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var elems = document.querySelectorAll(".dropdown-trigger");
+  var instances = M.Dropdown.init(elems, options);
+});
