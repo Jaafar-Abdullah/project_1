@@ -1,19 +1,20 @@
 <h1>Groups#show</h1>
+
+<div class="messages">
+
 <% @group_messages.each do |message| %>
   
   <%# <%=  messege.body %> 
-
-
   <div class="mess">
-  <img src="http://photo.elcinema.com.s3.amazonaws.com/uploads/_315x420_e200a9776586333a819828a946560cb18490e2ae6b3cf22ddeb1771f175a83c2.jpg" alt="">
+  <img src=<%= cl_image_tag message.user.user_image %> alt="">
   <p class="name-left"><%= message.user.user_name %>:</p>
   <p><%= message.body %></p>
 </div>
 
-
 <% end %>
+</div>
 
-<%= form_for @new_message do |f| %>
+<%= form_for @new_message, remote: true do |f| %>
 <%= f.text_area :body %>
 <%= hidden_field_tag "message[group_id]", params[:id] %>
 <%= hidden_field_tag "message[user_id]", current_user.id %>

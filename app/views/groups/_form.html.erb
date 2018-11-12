@@ -1,4 +1,4 @@
-<%= form_for @message do |f| %>
+<%= form_for @message, remote: true do |f| %>
 <%= f.text_area :body %>
 <%= hidden_field_tag "message[group_id]", params[:id] %>
 <%= hidden_field_tag "message[user_id]", current_user.id %>

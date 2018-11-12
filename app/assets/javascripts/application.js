@@ -15,14 +15,17 @@
 //= require turbolinks
 //= require jquery
 //= require_tree .
+//= require_tree ./channels
 
-// $(document).ready(function() {});
-//   console.log("jquery connected!");
-//   //   $(".dropdown-trigger").dropdown();
+$(document).on("ready turbolinks:load", function() {
+  var elems = document.querySelectorAll(".dropdown-trigger");
+  var instances = M.Dropdown.init(elems);
+});
+
 // });
 // // $(document).ready(function() {});
 
-document.addEventListener("DOMContentLoaded", function() {
-  var elems = document.querySelectorAll(".dropdown-trigger");
-  var instances = M.Dropdown.init(elems, options);
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//   var elems = document.querySelectorAll(".dropdown-trigger");
+//   var instances = M.Dropdown.init(elems, options);
+// });

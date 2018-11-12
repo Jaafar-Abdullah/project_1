@@ -8,8 +8,8 @@
 
 <% @messages.each do |message| %>
 
-<div class="mess">
-  <img src="http://photo.elcinema.com.s3.amazonaws.com/uploads/_315x420_e200a9776586333a819828a946560cb18490e2ae6b3cf22ddeb1771f175a83c2.jpg" alt="">
+<div class="mess" id="messages">
+  <%= cl_image_tag message.user.user_image %>
   <p class="name-left"><%= message.user.user_name %>:</p>
   <p><%= message.body %></p>
 </div>

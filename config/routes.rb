@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # get 'messages/edit'
   # get 'messages/new'
   # get 'pages/home'
+
+  mount ActionCable.server => '/cable'
   resources :messages ,:groups
   root "pages#home"
   devise_for :users
